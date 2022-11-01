@@ -13,6 +13,11 @@ public class UserRegistration {
 		return lastname.matches("^[A-Z]{1}[a-zA-Z]{2,}$");
 	}
 
+	// Method for validation of Email -- UC3
+	public static boolean Email(String email) {
+		return email.matches("^[a-z]{3,}[.+-_]*[a-z0-9]*{3,}[@][a-z0-9]{1,}[.][a-z]{2,}[.]*[a-z]*{2,}$");
+	}
+
 	public static void main(String[] args) {
 		System.out.println("Welcome in User registration program using Regex");
 		Scanner input = new Scanner(System.in);
@@ -29,6 +34,13 @@ public class UserRegistration {
 			System.out.println(lastname + " : is a valid last name ");
 		} else {
 			System.out.println(lastname + " : is a invalid last name ");
+		}
+		System.out.println("Enter Email id");
+		String email = input.next();
+		if (Email(email)) {
+			System.out.println(email + " : is a valid email id");
+		} else {
+			System.out.println(email + " : is a invalid email id");
 		}
 	}
 }
