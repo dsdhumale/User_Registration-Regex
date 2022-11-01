@@ -23,6 +23,11 @@ public class UserRegistration {
 		return mobilenum.matches("^[0-9]{2}[\s][0-9]{10}$");
 	}
 
+	// Method for validation of Password should have minimum 8 character-- UC5
+	public static boolean password(String passWord) {
+		return passWord.matches("[A-za-z0-9@_#$%!]{8,}");
+	}
+
 	public static void main(String[] args) {
 		System.out.println("Welcome in User registration program using Regex");
 		Scanner input = new Scanner(System.in);
@@ -54,6 +59,13 @@ public class UserRegistration {
 			System.out.println(mobilenum + " : is a valid mobile number");
 		} else {
 			System.out.println(mobilenum + " : is a invalid mobile number");
+		}
+		System.out.println("Enter Password");
+		String passsWord = input.next();
+		if (password(passsWord)) {
+			System.out.println(passsWord + " : is a valid password");
+		} else {
+			System.out.println(passsWord + " : is a invalid password");
 		}
 	}
 }
