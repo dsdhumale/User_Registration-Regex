@@ -23,9 +23,9 @@ public class UserRegistration {
 		return mobilenum.matches("^[0-9]{2}[\s][0-9]{10}$");
 	}
 
-	// Method for validation of Password should have minimum 8 character-- UC5
+	// Method for validation of Password should have at least 1 upper case-- UC6
 	public static boolean password(String passWord) {
-		return passWord.matches("[A-za-z0-9@_#$%!]{8,}");
+		return passWord.matches("(?=.*[A-Z])[A-za-z0-9@_#$%!]{8,}");
 	}
 
 	public static void main(String[] args) {
