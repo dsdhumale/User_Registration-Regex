@@ -23,9 +23,9 @@ public class UserRegistration {
 		return mobilenum.matches("^[0-9]{2}[\s][0-9]{10}$");
 	}
 
-	// Method for validation of Password should have at least 1 upper case-- UC6
+	// Method for validation of Password should have at least 1 numeric value -- UC7
 	public static boolean password(String passWord) {
-		return passWord.matches("(?=.*[A-Z])[A-za-z0-9@_#$%!]{8,}");
+		return passWord.matches("(?=.*[A-Z])(?=.*[0-9])[A-za-z0-9@_#$%!]{8,}");
 	}
 
 	public static void main(String[] args) {
